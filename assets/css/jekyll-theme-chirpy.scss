@@ -9,3 +9,43 @@
 ';
 
 /* append your custom style below */
+
+.chat-episode {
+  margin: 1.75rem 0;
+  padding: 1.5rem 1.75rem;
+  border-radius: 0.75rem;
+  border-left: 3px solid var(--link-color);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.chat-date {
+  font-size: 0.75rem;
+  color: var(--text-muted-color);
+  margin-bottom: 0.5rem;
+}
+
+.chat-situation {
+  font-size: 0.8rem;
+  color: var(--text-muted-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--main-border-color);
+}
+
+.chat-line {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  word-break: keep-all;
+  padding-left: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .speaker {
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+}
