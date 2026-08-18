@@ -1,0 +1,2 @@
+# 드래그로 넣은 사진을 WebP 로 줄이고 본문 이미지 경로를 바로잡는다.
+bash tools/optimize-images.sh --stage

@@ -26,5 +26,14 @@
   // Run tasks in macOS
   "terminal.integrated.profiles.osx": {
     "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
+  },
+  // 사진을 md 편집기로 드래그(Shift 누른 채) 하거나 붙여넣으면
+  // assets/img/posts/<글파일이름>/ 아래로 자동 복사된다.
+  // 삽입되는 경로 교정과 WebP 변환은 커밋 시 tools/optimize-images.sh 가 처리.
+  "markdown.editor.drop.enabled": true,
+  "markdown.editor.filePaste.enabled": true,
+  "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
+  "markdown.copyFiles.destination": {
+    "/_posts/**/*": "/assets/img/posts/${documentBaseName}/"
   }
 }
