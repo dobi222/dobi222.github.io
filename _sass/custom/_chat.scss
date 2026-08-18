@@ -1,0 +1,36 @@
+/* 대화 기록(.chat-episode) — 육아일기용 최소 스타일.
+   색은 전부 Chirpy 테마 변수를 써서 라이트/다크 모드를 따라간다. */
+
+.chat-episode {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--blockquote-border-color);
+}
+
+.chat-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted-color);
+}
+
+.chat-situation {
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+}
+
+.chat-line {
+  margin-bottom: 0.45rem;
+  line-height: 1.7;
+  word-break: keep-all; /* 한글 단어 중간에서 줄바꿈되지 않도록 */
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .speaker {
+    margin-right: 0.2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+}
