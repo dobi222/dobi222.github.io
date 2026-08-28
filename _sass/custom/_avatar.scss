@@ -1,0 +1,8 @@
+/* 사이드바 프로필 이미지 자리를 없앤다.
+   site.avatar 를 비우면 이미지는 사라지지만 Chirpy 는 #avatar 상자를
+   그대로 그리기 때문에(2px 테두리 링) 빈 사각형이 남는다. 그래서 숨긴다.
+   Chirpy 가 `#sidebar #avatar` (ID 2개) 로 선언하므로 같은 수준으로 맞춘다. */
+
+#sidebar #avatar {
+  display: none;
+}
