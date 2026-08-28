@@ -2,7 +2,7 @@
 #
 # 포스트 이미지 최적화
 #
-# VS Code에서 _posts/*.md 로 사진을 드래그하면
+# VS Code에서 _posts 안의 글(하위 폴더 포함)로 사진을 드래그하면
 #   1) assets/img/posts/<글이름>/ 아래로 원본이 복사되고
 #   2) 본문에는 문서 기준 상대경로(../assets/...)가 삽입된다.
 #
@@ -76,8 +76,7 @@ fi
 
 # 본문 경로 교정. 변환 여부와 무관하게 항상 훑는다.
 rewrote=0
-for md in _posts/*.md; do
-  [ -e "$md" ] || continue
+while IFS= read -r -d '' md; do
   cp "$md" "$md.bak"
 
   # ../assets, ./assets, assets → /assets  (마크다운 링크와 <img src> 양쪽)
@@ -103,7 +102,7 @@ for md in _posts/*.md; do
     echo "  경로 교정: $md"
     [ "$STAGE" = yes ] && git add -- "$md"
   fi
-done
+done < <(find _posts -type f -name '*.md' -print0)
 
 if [ "$STAGE" = yes ] && [ -d "$IMG_ROOT" ]; then
   git add -A -- "$IMG_ROOT"
