@@ -218,6 +218,8 @@ compress_html:
 
 exclude:
   - "*.gem"
+  - TODO.md            # 로컬 전용 메모 (.gitignore 에도 있음)
+  - README_DOOBY.md    # 로컬 전용 메모
   - "*.gemspec"
   - docs
   - tools
