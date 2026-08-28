@@ -16,10 +16,10 @@ timezone: Asia/Seoul
 
 title: 두비 # the main title
 
-tagline: 빵, 책, 게임을 좋아해요 # it will display as the subtitle
+tagline: One more step. That's all. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  빵, 책, 게임을 좋아하는 사람
+  One more step. That's all.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
