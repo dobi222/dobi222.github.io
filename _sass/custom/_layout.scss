@@ -1,0 +1,47 @@
+/* 사진 여러 장을 가로로 나란히 놓는다.
+   kramdown 이 div 안의 이미지들을 <p> 하나로 감싸므로, 그 <p> 를 display:contents 로
+   없애서 Chirpy 가 만든 <a> 가 직접 flex 아이템이 되게 한다.
+
+   기본 (폭 균등):
+     <div class="img-row" markdown="1"> ... </div>
+   높이 맞춤 (세로/가로 사진이 섞였을 때):
+     <div class="img-row h" markdown="1"> ... </div>
+     <div class="img-row h" style="--row-h: 10rem" markdown="1"> ... </div>  높이 조절 */
+
+.img-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+
+  > p {
+    display: contents;
+  }
+
+  a {
+    flex: 1 1 0;
+    min-width: 8rem;
+    margin: 0 !important;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+  }
+
+  /* 높이를 맞추고 폭은 비율대로 */
+  &.h {
+    a {
+      flex: 0 0 auto;
+      min-width: 0;
+    }
+
+    img {
+      width: auto;
+      height: var(--row-h, 14rem);
+      object-fit: cover;
+    }
+  }
+}
