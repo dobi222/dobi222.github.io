@@ -79,8 +79,12 @@ rewrote=0
 while IFS= read -r -d '' md; do
   cp "$md" "$md.bak"
 
-  # ../assets, ./assets, assets → /assets  (마크다운 링크와 <img src> 양쪽)
+  # ../assets, ./assets, assets → /assets
+  # 파일명에 공백이 있으면 VS Code 가 ](<...>) 꺾쇠 형태로 넣으므로 그것도 처리한다.
   sed -E -i '' \
+    -e 's#\]\(<(\.\./)+assets/#](</assets/#g' \
+    -e 's#\]\(<\./assets/#](</assets/#g' \
+    -e 's#\]\(<assets/#](</assets/#g' \
     -e 's#\]\((\.\./)+assets/#](/assets/#g' \
     -e 's#\]\(\./assets/#](/assets/#g' \
     -e 's#\]\(assets/#](/assets/#g' \
