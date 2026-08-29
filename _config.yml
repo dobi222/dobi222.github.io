@@ -221,6 +221,8 @@ exclude:
   - "*.gem"
   - TODO.md            # 로컬 전용 메모 (.gitignore 에도 있음)
   - README_DOOBY.md    # 로컬 전용 메모
+  - WRITING_DOOBY.md   # 로컬 전용 메모
+  - private.md         # 로컬 전용 (.gitignore 에도 있음)
   - "*.gemspec"
   - docs
   - tools
